@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Merlan
+namespace pz_5
 {
     class Program
     {
