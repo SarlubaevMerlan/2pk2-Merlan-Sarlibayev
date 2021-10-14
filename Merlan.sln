@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pz_5", "Merlan\pz_5.csproj", "{B8C28215-3F8D-445A-AEAE-E90B7C2B2EA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pz_6", "pz_6\pz_6.csproj", "{BB5A29B8-B4BD-423F-AD3F-E80B88139823}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pz_6", "pz_6\pz_6.csproj", "{BB5A29B8-B4BD-423F-AD3F-E80B88139823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pz_8", "Pz_8\Pz_8.csproj", "{F31616FC-1236-4A31-81B7-6C864DB9D61C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BB5A29B8-B4BD-423F-AD3F-E80B88139823}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB5A29B8-B4BD-423F-AD3F-E80B88139823}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB5A29B8-B4BD-423F-AD3F-E80B88139823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F31616FC-1236-4A31-81B7-6C864DB9D61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31616FC-1236-4A31-81B7-6C864DB9D61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F31616FC-1236-4A31-81B7-6C864DB9D61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31616FC-1236-4A31-81B7-6C864DB9D61C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
