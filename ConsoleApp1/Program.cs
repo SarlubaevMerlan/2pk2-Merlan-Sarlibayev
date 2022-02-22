@@ -8,8 +8,7 @@ namespace Companys
     {
         static int AllCount = 0;
         static int Coun2020 = 0;
-        private string name;
-        internal string Name
+        private string name
         {
             get { return name; }
             set
@@ -17,8 +16,7 @@ namespace Companys
                 if (value != null) name = value;
             }
         }
-        private int okpo;
-        internal int Okpo
+        private int okpo
         {
             set
             {
@@ -26,8 +24,7 @@ namespace Companys
             }
             get { return okpo; }
         }
-        private string dateOfRegistry;
-        internal string DateOfRegistry
+        private string dateOfRegistry
         {
             get { return dateOfRegistry; }
             set
@@ -46,12 +43,12 @@ namespace Companys
             AllCount++;
             //Проверка на 8 цифр
             if ((int)Math.Pow(10, 7) <= okp && (int)Math.Pow(10, 8) > okp)
-                Okpo = okp;
+                okpo = okp;
             else
-                Okpo = rnd.Next((int)Math.Pow(10, 7), (int)Math.Pow(10, 8));
+                okpo = rnd.Next((int)Math.Pow(10, 7), (int)Math.Pow(10, 8));
 
-            Name = nname;
-            DateOfRegistry = DateTime.Now.ToString();
+            name = nname;
+            dateOfRegistry = DateTime.Now.ToString();
             if (DateTime.Now.Year >= 2020) Coun2020++;
         }
 
@@ -61,29 +58,14 @@ namespace Companys
             name = nname;
             okpo = rnd.Next((int)Math.Pow(10, 7), (int)Math.Pow(10, 8));
             dateOfRegistry = DateTime.Now.ToString();
-            if(DateTime.Now.Year >= 2020) Coun2020++;
+            if (DateTime.Now.Year >= 2020) Coun2020++;
         }
 
-        public virtual void GetCompanyInfo()
+        public void GetCompanyInfo()
         {
-            Console.WriteLine("Компания: " + Name +
-                              " владеет okpo: " + Okpo +
-                              "\n Зарегистрированна в " + DateOfRegistry);
-        }
-    }
-    class OOO : Company
-    {
-        string founder;
-        public OOO(string nname, int okp, string _founder) : base(nname, okp)
-        {
-            founder = _founder;
-        }
-        public override void GetCompanyInfo()
-        {
-            Console.WriteLine("Компания: " + Name +
-                              " владеет okpo: " + Okpo +
-                              "\n Зарегистрированна в " + DateOfRegistry+
-                              "учередитель "+founder);
+            Console.WriteLine("Компания: " + name +
+                              " владеет okpo: " + okpo +
+                              "\n Зарегистрированна в " + dateOfRegistry);
         }
     }
 }
