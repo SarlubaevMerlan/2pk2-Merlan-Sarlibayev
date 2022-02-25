@@ -4,86 +4,43 @@ using System.Text;
 
 namespace Companys
 {
-    class Company
+    public class DeliveryRequest
     {
-        static int AllCount = 0;
-        static int Coun2020 = 0;
-        private string name;
-        internal string Name
-        {
-            get { return name; }
-            set
-            {
-                if (value != null) name = value;
-            }
-        }
-        private int okpo;
-        internal int Okpo
-        {
-            set
-            {
-                if (8 == value.ToString().Length) okpo = value;
-            }
-            get { return okpo; }
-        }
-        private string dateOfRegistry;
-        internal string DateOfRegistry
-        {
-            get { return dateOfRegistry; }
-            set
-            {
-                var date = DateTime.Parse(value);
-                if (
-                    DateTime.Parse("01.01.1990") <= date
-                    && DateTime.Parse("01.01.2022") <= date
-                    ) dateOfRegistry = value;
-            }
-        }
-        private Random rnd = new Random();
+        protected int ID { get; set; }
+        protected DateTime RequestTime { get; set; }
+        protected int Summ { get; set; }
+        protected string Аdr { get; set; }
 
-        public Company(string nname, int okp)
-        {
-            AllCount++;
-            //Проверка на 8 цифр
-            if ((int)Math.Pow(10, 7) <= okp && (int)Math.Pow(10, 8) > okp)
-                Okpo = okp;
-            else
-                Okpo = rnd.Next((int)Math.Pow(10, 7), (int)Math.Pow(10, 8));
+        private static int I = 0;
+        private static int II = 0;
 
-            Name = nname;
-            DateOfRegistry = DateTime.Now.ToString();
-            if (DateTime.Now.Year >= 2020) Coun2020++;
+        private static int AllSumm = 0;
+        private static int Requests = 0;
+
+        public DeliveryRequest(DateTime RequestTime, int ID = -1, int Summ = 200, string Аdr = "Аdr")
+        {
+
+            AllSumm += Summ;
+            Requests++;
+
+            this.ID = ID;
+            this.RequestTime = RequestTime;
+            this.Summ = Summ;
+            this.Аdr = Аdr;
         }
 
-        public Company(string nname)
+        public DeliveryRequest(int ID)
         {
-            AllCount++;
-            name = nname;
-            okpo = rnd.Next((int)Math.Pow(10, 7), (int)Math.Pow(10, 8));
-            dateOfRegistry = DateTime.Now.ToString();
-            if(DateTime.Now.Year >= 2020) Coun2020++;
+            this.ID = ID;
+            this.RequestTime = DateTime.Now.Date;
+            this.Summ = -1;
+            this.Аdr = "adr";
         }
 
-        public virtual void GetCompanyInfo()
+        public void GetDeliveryInfo()
         {
-            Console.WriteLine("Компания: " + Name +
-                              " владеет okpo: " + Okpo +
-                              "\n Зарегистрированна в " + DateOfRegistry);
+            Console.WriteLine($"ID = {ID}, RequestTime = {RequestTime}, Summ = {Summ}, Аdr = {Аdr}");
         }
-    }
-    class OOO : Company
-    {
-        string founder;
-        public OOO(string nname, int okp, string _founder) : base(nname, okp)
-        {
-            founder = _founder;
-        }
-        public override void GetCompanyInfo()
-        {
-            Console.WriteLine("Компания: " + Name +
-                              " владеет okpo: " + Okpo +
-                              "\n Зарегистрированна в " + DateOfRegistry+
-                              "учередитель "+founder);
-        }
+
     }
 }
